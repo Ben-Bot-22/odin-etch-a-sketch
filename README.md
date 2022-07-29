@@ -26,7 +26,7 @@ Users click and drag on a canvas to create pixel art.
 ### Links
 
 - Solution URL: [Code on GitHub](https://github.com/Ben-Bot-22/odin-etch-a-sketch)
-- Live Site URL: [GitHub pages live URL]()
+- Live Site URL: [GitHub pages live URL](https://ben-bot-22.github.io/odin-etch-a-sketch/)
 
 ## My process
 
