@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Etch-a-sketch</title>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+    <div class="container">
+        <h1>ETCH-a-SKETCH</h1>
+        <div class="toolbar">
+            <div class="color-container">
+                <input type="color" class="color-picker">
+                <div class="color-history-container">
+                    <button class="color-history"></button>
+                </div>
+            </div>
+            <div class="slidecontainer">
+                <p class="slide-label">16 x 16</p>
+                <input type="range" min="1" max="64" value="16" class="slider">
+              </div>
+              <label class="switch-container">
+                <p class="erase-label">ERASE</p>
+                <div class="switch-container">
+                    <input type="checkbox">
+                    <span class="slider-switch"></span>
+                </div>
+
+              </label>
+              <div class="clear-container">
+                  <button class='clear-btn'>CLEAR</button>
+              </div>
+        </div>
+        <div class="canvas">
+        </div>
+    </div>
+    <footer>
+        <p>
+          Made with <span class="heart">&#9829;</span> by
+          <a href="https://github.com/Ben-Bot-22">Ben-Bot-22</a>
+        </p>
+      </footer>
+    <script src="script.js"></script>
+</body>
+</html>

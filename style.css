@@ -1,0 +1,252 @@
+@font-face {
+  font-family: "dpcomicregular";
+  src: url("./font/dpcomic-webfont.woff2") format("woff2"),
+    url("./font/dpcomic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color: rgb(0, 166, 255);
+  --pixel-rows: 16;
+  --label-size: 18px;
+  --color-history: black;
+}
+
+* {
+  font-family: "dpcomicregular", "Helvetica Neue", "sans-serif";
+  color: white;
+  text-shadow: 0.025em 0.075em 0 var(--color);
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h1:hover {
+  color: var(--color);
+  text-shadow: 0.025em 0.075em 0 white;
+}
+
+.clear-btn {
+  background-color: var(--color);
+  border: none;
+  width: 60px;
+  height: 30px;
+  letter-spacing: 1.2px;
+  /* color:  */
+  text-shadow: none;
+  box-shadow: -5px 5px rgb(123, 123, 123);
+  border: 1px solid white;
+  font-size: 16px;
+  transition: all 0.05s ease-in-out;
+}
+
+.clear-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  /* border: 1px solid red; */
+}
+
+.clear-btn:hover {
+  transform: scale(1.1);
+}
+
+.clear-btn:active {
+  box-shadow: 0px 0px rgb(123, 123, 123);
+  transform: translateX(-5px) translateY(5px);
+  /* Moving button 4px to y-axis */
+}
+
+.color-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.color-picker {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border: 1px solid white;
+}
+
+.color-history-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.color-history {
+  width: 15px;
+  height: 15px;
+  background-color: var(--color-history);
+  border: 1px solid white;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-bottom: 18px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pixel {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+.pixel:hover {
+  border: 1.5px solid var(--color);
+}
+
+a:hover {
+  font-size: 1.2rem;
+  color: var(--color);
+  text-shadow: 0.025em 0.075em 0 white;
+}
+
+.heart {
+  color: var(--color);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222831;
+}
+
+.slide-label {
+  margin: 0;
+  padding-bottom: 4px;
+  font-size: var(--label-size);
+}
+
+.canvas {
+  border: 2px solid var(--color);
+  display: grid;
+  grid-template-columns: repeat(var(--pixel-rows), 1fr);
+  grid-template-rows: repeat(var(--pixel-rows), 1fr);
+  width: 500px;
+  height: 500px;
+}
+
+.slidecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100px; /* Width of the outside container */
+  padding-bottom: 6px;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 8px; /* Specified height */
+  background: #ffffff; /* Grey background */
+  outline: none; /* Remove outline */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: var(--color); /* Green background */
+  border: 1px solid white;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: var(--color); /* Green background */
+  border: 1px solid white;
+}
+
+.erase-label {
+  font-size: var(--label-size);
+  letter-spacing: 1.2px;
+  margin: 0px;
+  padding-bottom: 4px;
+  /* border: 1px solid red; */
+}
+
+/* Switch for erasing */
+.switch-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The slider */
+.slider-switch {
+  position: absolute;
+  cursor: pointer;
+  width: 41px;
+  height: 15px;
+  padding-bottom: 7px;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider-switch:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider-switch {
+  background-color: var(--color);
+}
+
+input:focus + .slider-switch {
+  box-shadow: 0 0 1px var(--color);
+}
+
+input:checked + .slider-switch:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
