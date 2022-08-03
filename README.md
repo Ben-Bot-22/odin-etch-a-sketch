@@ -1,6 +1,6 @@
 # Etch a Sketch
 
-This is a solution to the "Etch-a-Sketch" project in the [Odin Project](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors).  The Odin project is a open source tutorial for learning web development.
+This is a solution to the "Etch-a-Sketch" project in the [Odin Project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch).  The Odin project is a open source tutorial for learning web development.
 
 ## Table of contents
 
